@@ -11,6 +11,11 @@ import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.jupiter.api.condition.EnabledForJreRange;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
+import org.junit.jupiter.api.condition.EnabledIfSystemProperty;
+import org.junit.jupiter.api.condition.EnabledOnJre;
+import org.junit.jupiter.api.condition.JRE;
 
 import java.time.Duration;
 import java.time.temporal.ChronoUnit;
@@ -58,7 +63,7 @@ class DemoUtilsTest {
         log.info(" afterEachClass | AfterAll ");
     }
     @Test
-    @Order(2)
+    @EnabledOnJre(value= JRE.JAVA_17)
     void testEqualsAndNotEquals() {
         log.info(" executing --testEqualsAndNotEquals ");
         int result = demoUtils.add(2, 4);
@@ -123,5 +128,13 @@ class DemoUtilsTest {
         assertTimeoutPreemptively(Duration.of(5, ChronoUnit.SECONDS), () -> demoUtils.checkTimeout(), "should run within 3 seconds");
     }
 
+
+    @Test
+    @EnabledIfSystemProperty(named = "coco", matches="nut")
+    void testEnabledIfSystemProperty() {}
+
+    @Test
+    @EnabledIfEnvironmentVariable(named = "coco", matches="nut")
+    void testEnabledIfEnvironmentVariable() {}
 
 }
