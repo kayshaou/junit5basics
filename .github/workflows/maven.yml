@@ -25,4 +25,4 @@ jobs:
     - name: Run test
       run: mvn clean test
     - name: Generate Report 
-      run: mvn site -DgenerateReport=false
+      run: mvn site -DgenerateReports=false
