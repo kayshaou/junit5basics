@@ -1,3 +1,5 @@
+[![Java CI with Maven](https://github.com/kayshaou/junit5basics/actions/workflows/maven.yml/badge.svg)](https://github.com/kayshaou/junit5basics/actions/workflows/maven.yml)
+
 # My Learning Stash : Junit5, MockMVC
 ## Repository for code learned for Junit5, MockMVC, Mockito
 ### Library used 
