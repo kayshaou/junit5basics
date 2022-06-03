@@ -11,4 +11,4 @@
 
 ### Command used
 - mvn clean test
-- mvn site -DgenerateReport=false (then access the surefire under target folder to see the report)
+- mvn site -DgenerateReports=false (then access the surefire under target folder to see the report)
