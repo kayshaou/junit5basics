@@ -26,4 +26,5 @@ jobs:
       run: mvn -B package --file pom.xml
     - name: Run test
       run: mvn clean test
-    - name: mvn site -DgenerateReport=false
+    - name: Generate Report 
+      run: mvn site -DgenerateReport=false
